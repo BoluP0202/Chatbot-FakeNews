@@ -3,9 +3,9 @@ IDK what I'm doing man...
 
 Okay so a proper read me.
 This repository includes several modules
-><span style = "color:green">News categoriser.ipynb</span> - The Model Training Document
-><span style = "color:red">Chattler.py</span> - The python file that uses the model's data to determine truth
-><span style = "color:blue">Chattles.py</span> - The python file that contains the Rule based chatbot
+1. <span style = "color:green">News categoriser.ipynb</span> - The Model Training Document
+2. <span style = "color:red">Chattler.py</span> - The python file that uses the model's data to determine truth
+3. <span style = "color:blue">Chattles.py</span> - The python file that contains the Rule based chatbot
 There is also an experimental function utilising spacy for NER
 this function is contained in <span style = "color:yellow">NER.py</span> and is called in <span style = "color:red">Chattles.py</span>
 
