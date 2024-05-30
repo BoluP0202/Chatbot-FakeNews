@@ -49,8 +49,7 @@ def checker(text):
     model = load_model("LR-Lemm-TFIDF.sav")
     vectorizer = load_vectorizer("TFIDF.sav")
     if len(text) < 30:
-        print("that seemes a little short")
-        checkles = True
+        print("that seemes a little short, That's probably not enough to guess accurately. Also while I'll give an answer i can't tell you much about something that isn't an article")
     reality = predict_reality(text, model, vectorizer)
     return reality
     # 1 is_true
