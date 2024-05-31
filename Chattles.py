@@ -8,12 +8,12 @@ class Rulebot():
     "nah",
     "i don't think so", "n")
     Neutr = ("i'm not sure", "I don't know","idk")
-    posi = (    "yes",
+    posi = ("yes",
     "sure",
     "of course",
     "absolutely",
     "you got it",
-    "sounds good", "n")
+    "sounds good", "y")
     exits = ("bye",
             "goodbye",
             "exit",
@@ -30,14 +30,10 @@ class Rulebot():
         will_help = input(f"Hi {self.name}, This is MKT-B's Fake News Detection Chatbot where we apply NLP concepts into a real workl use\n Do you want to use us?\n ")
         if will_help.lower() in self.neg:
             print("I see...")
-        elif will_help.lower in self.posi:
-            self.chat()
         elif will_help.lower() in self.exits:
             self.exiting(will_help)
-        else:
-            print("please give a positive or negative response")
-            self.greet()
-
+        else: 
+            self.chat()
     def exiting(self,reply):
         for command in self.exits:
             if reply == command:
@@ -47,7 +43,7 @@ class Rulebot():
     def chat(self):
         print("Let's get started")
         starter = input("Do you want to look at newws\n")
-        if starter in self.posi:
+        if starter.lower() in self.posi:
             news = input("Give me the news snippet.\n")
             if news.lower() in self.neg:
                 print("oh...\n Well then...\n Do you want to quit?")
@@ -66,6 +62,20 @@ class Rulebot():
                 if conti in self.posi:
                     print("Your doc talks about some things:")
                     show_ents(news)
+                    print("Okay then, do you want to continue?")
+                    checks = input()
+                    if checks in self.neg:
+                        print("oh...\n Well then...\n Do you want to quit?")
+                        quiter = input()
+                        if quiter.lower() in self.posi:
+                            self.exiting("quit")
+                        elif quiter.lower in self.exits:
+                            self.exits(quiter)
+                        else:
+                            self.chat()
+                        
+                    else:
+                        self.chat()
                 elif conti.lower() in self.exits:
                     self.exiting(conti)
                 elif conti in self.neg:
